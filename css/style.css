@@ -1,0 +1,22 @@
+.cabecalho {
+    align-items: center;
+    background-color: aquamarine;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.menu_item {
+    list-style: none;
+}
+
+.menu_link {
+    color:black;
+    margin-right: 1.25rem;
+    text-decoration: none;
+}
+
+.menu_link:hover {
+    text-decoration: underline;
+}
