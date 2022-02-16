@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato</title>
+    <script src="js/funcoes.js"></script>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/destino.css">
@@ -15,7 +16,8 @@
     <link rel="stylesheet" href="css/destino-titulo.css">
     <link rel="stylesheet" href="css/destinos.css">
     <link rel="stylesheet" href="css/sobre-descricao.css">
-    <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="stylesheet" href="css/formulario.css">
+    <link rel="stylesheet" href="css/rodape.css">
 </head>
 <body>
     <header class="cabecalho">
@@ -27,7 +29,61 @@
                 <li class="menu_item"><a class="menu_link" href="#">CONTATO</a></li>
             </ul>
         </nav>
-    </header>
-    
+    </header><br>
+<!--Formulário: Nome, código e quantidade de produtos-->
+<form>
+    <table>
+        <h1 class="alinharRotulos">PREENCHA SEUS DADOS:</h1><br>
+        <!--Nome do produto-->
+        <tr>
+            <td class="alinharRotulos">Nome:</td>
+            <td class="alinharRotulos"><input id="txtNomeProduto" type="text"></td>
+        </tr>
+        <!--Código do produto-->
+        <tr>
+            <td class="alinharRotulos">Email:</td>
+            <td class="alinharRotulos"><input id="txtCodProduto" type="email"></td>
+        </tr>
+        <!--Detalhes do produto-->
+        <tr>
+            <td class="alinharRotulos">Número de Contato:</td>
+            <td class="alinharRotulos"><input id="txtDetProduto" type="number"></td>
+        </tr>
+        <!--Quantidade do produto-->
+        <tr>
+            <td class="alinharRotulos">Qual seu destino?</td>
+            <td class="alinharRotulos">
+                <select>
+                    <option value="0">Escolha aqui:</option>
+                    <option value="1">Copacabana, Brasil</option>
+                    <option value="2">Punta Cana, República Dominicana</option>
+                    <option value="3">Cusco, Peru</option>
+                    <option value="4">Havaí, EUA</option>
+                    <option value="5">Buenos Aires, Argentina</option>
+                    <option value="6">Nova York, EUA</option>
+                    <option value="7">Cairo, Egito</option>
+                    <option value="8">Bota outro</option>
+                    <option value="9">Búzios</option>
+                    <option value="10">Leblon</option>
+                </select>
+            </td>
+        </tr>
+        <!--Procedentes-->
+        <tr>
+            <td class="alinharRotulos">Quantas pessoas vão?:</td>
+            <td class="alinharRotulos"><input id="txtProcProduto" type="number"></td>
+        </tr>
+        <!--Botoes-->
+        <tr>
+            <td class="alinharRotulos" colspan="2" aling="center">
+                <input type="button" value="Concluido" class="alinhaBtns" onclick="validarProduto('txtNomeProduto','txtCodProduto','txtDetProduto','qtidadeProduto','txtProcProduto')">
+                <input type="reset" value="Limpar" class="alinhaBtns">
+            </td>
+        </tr>
+    </table>
+</form>
 </body>
 </html>
+<footer class="rodape">
+    Whatsapp: (21) 985859898 - Email: agencia@hotmail.com
+</footer>
