@@ -1,6 +1,7 @@
 .cabecalho {
+    text-align: center;
     align-items: center;
-    background-color: aquamarine;
+    background-color: orange;
     display: flex;
     justify-content: space-between;
     padding-left: 2rem;

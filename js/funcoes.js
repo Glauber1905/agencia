@@ -1,3 +1,14 @@
+//-----------------------------------------------------------------------------------------------------------
+// Função: validarProduto(idNomeProduto, idCodProduto, idQtidadeProduto)
+// Verifica se foram informados o nome e o código do produto
+// Parâmetros:
+// - idNomeProduto: id do campo que contém o nome do produto
+// - idCodProduto: id do campo que contém o código do produto
+// - idQtidadeProduto: id do campo que contém a quantidade do produto
+// OBS: Se faltar alguma informação (nome ou código do produto) aparecerá uma mensagem de erro. Em caso de 
+// sucesso (todas as informações preenchidas), chama a função cadastrarProduto(...)
+// Retorno: nenhum
+//-----------------------------------------------------------------------------------------------------------
 function validarProduto(idNomeProduto, idCodProduto, idDetalProduto, idQtidadeProduto, idProcProduto) {
     let nome = document.getElementById(idNomeProduto).value;
     let codigo = document.getElementById(idCodProduto).value;
@@ -6,13 +17,24 @@ function validarProduto(idNomeProduto, idCodProduto, idDetalProduto, idQtidadePr
     let proc = document.getElementById(idProcProduto).value;
 
     if (nome == "")
-        alert("Seu nome não pode estar em branco. Favor preenchê-lo!");
+        alert("Nome do produto não pode estar em branco. Favor preenchê-lo!");
     else if (codigo == "")
-        alert("O número de não pode estar em branco. Favor preenchê-lo!");
+        alert("Código do produto não pode estar em branco. Favor preenchê-lo!");
     else cadastrarProduto(nome, codigo, det, parseInt(qtidade), proc);
 }
-function cadastrarProduto(produto, codig, detalhe, nome, proce) {
-    let novoProduto = {nome:produto, codigo:codig, detalhes:detalhe, quantidade:nome, procede:proce};
+//-----------------------------------------------------------------------------------------------------------
+// Função: cadastrarProduto(produto, codig, qtidade)
+// Cadastra um novo produto (nome, código e quantidade) no estoque
+// Parâmetros:
+// - produto: nome do produto a ser cadastrado no estoque (Ex: arroz)
+// - codig: código do produto a ser cadastrado no estoque (Ex: a01)
+// - qtidade: quantidade do produto a ser cadastrado no estoque (Ex: 7)
+// OBS: Apos cadastrar o novo produto no estoque, atualiza a quantidade de itens no carrinho, ou seja, chama 
+// a função atualizarTotalEstoque()
+// Retorno: nenhum
+//-----------------------------------------------------------------------------------------------------------
+function cadastrarProduto(produto, codig, detalhe, qtidade, proce) {
+    let novoProduto = {nome:produto, codigo:codig, detalhes:detalhe, quantidade:qtidade, procede:proce};
 
     if (typeof(Storage) !== "undefined") {
         let produtos = localStorage.getItem("produtos");
@@ -20,17 +42,30 @@ function cadastrarProduto(produto, codig, detalhe, nome, proce) {
         else produtos = JSON.parse(produtos);
         produtos.push(novoProduto); // Adiciona um novo produto
         localStorage.setItem("produtos",JSON.stringify(produtos))
-        alert("Seu cadastro foi feito com sucesso, em breve entraremos em contato com você!");
+        alert("Seu cadastro foi feito com sucesso, em breve entraremos em contato com você. Obrigado!");
         atualizarTotalEstoque("totalEstoque");
         location.reload();
     } 
     else alert("A versão do seu navegador é muito antiga. Por isso, não será possível executar essa aplicação");
 }
 
+//-----------------------------------------------------------------------------------------------------------
+// Função: atualizarTotalEstoque(idCampo)
+// Incrementa a quantidade de itens cadastrado no estoque (carrinho localizado no canto superior da tela)
+// Parâmetros:
+// - idCampo: identificador do campo que contem a quantidade de itens no estoque
+// Retorno: nenhum
+//-----------------------------------------------------------------------------------------------------------
 function atualizarTotalEstoque(idCampo) {
     localStorage.setItem("totalEstoque",++document.getElementById(idCampo).innerHTML)
 }
-
+//-----------------------------------------------------------------------------------------------------------
+// Função: carregarTotalEstoque(idCampo)
+// Incrementa a quantidade de itens cadastrado no estoque (carrinho localizado no canto superior da tela)
+// Parâmetros:
+// - idCampo: identificador do campo que contem a quantidade de itens no estoque
+// Retorno: nenhum
+//-----------------------------------------------------------------------------------------------------------
 function carregarTotalEstoque(idCampo) {
     if (typeof(Storage) !== "undefined") {
         let totalEstoque = localStorage.getItem("totalEstoque");
@@ -40,10 +75,14 @@ function carregarTotalEstoque(idCampo) {
     else alert("A versão do seu navegador é muito antiga. Por isso, não será possível executar essa aplicação");
 }
 
+//-----------------------------------------------------------------------------------------------------------
+// Exibe todos os itens do estoque (nome, código e quantidade)
+// Retorno: nenhum
+//-----------------------------------------------------------------------------------------------------------
 function listarEstoque() {
     if (typeof(Storage) !== "undefined") {
         let produtos = localStorage.getItem("produtos");
-        document.write("<h1>Pessoas Cadastradas:</h1>")
+        document.write("<h1>Cadastro dos Clientes:</h1>")
         if (produtos == null)
             document.write("<h3>Ainda não há nenhum item no estoque</h3>");
         else {
@@ -53,8 +92,8 @@ function listarEstoque() {
                 document.write("<li>Nome da pessoa: "+produto.nome+"</li>");
                 document.write("<li>Email da pessoa: "+produto.codigo+"</li>");
                 document.write("<li>Número da pessoa: "+produto.detalhes+"</li>");
-                document.write("<li>Destino desejado: "+produto.quantidade+"</li>");
-                document.write("<li>Quantas pessoas vão: "+produto.procede+"</li>");
+                document.write("<li>Destino escolhido: "+produto.quantidade+"</li>");
+                document.write("<li>Pessoas que vão viajar: "+produto.procede+"</li>");
                 document.write("</ul>");
             });
         }

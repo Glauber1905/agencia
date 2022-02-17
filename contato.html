@@ -25,63 +25,63 @@
         <nav class="menu">
             <ul>
                 <li class="menu_item"><a class="menu_link" href="index.html">INÍCIO</a></li>
-                <li class="menu_item"><a class="menu_link" href="osmais.html">OS MAIS</a></li>
-                <li class="menu_item"><a class="menu_link" href="#">CONTATO</a></li>
+                <li class="menu_item"><a class="menu_link" href="osmais.html">DESTINOS</a></li>
+                <li class="menu_item"><a class="menu_link" href="#">FAÇA SEU CADASTRO</a></li>
             </ul>
         </nav>
     </header><br>
-<!--Formulário: Nome, código e quantidade de produtos-->
-<form>
-    <table>
-        <h1 class="alinharRotulos">PREENCHA SEUS DADOS:</h1><br>
-        <!--Nome do produto-->
-        <tr>
-            <td class="alinharRotulos">Nome:</td>
-            <td class="alinharRotulos"><input id="txtNomeProduto" type="text"></td>
-        </tr>
-        <!--Código do produto-->
-        <tr>
-            <td class="alinharRotulos">Email:</td>
-            <td class="alinharRotulos"><input id="txtCodProduto" type="email"></td>
-        </tr>
-        <!--Detalhes do produto-->
-        <tr>
-            <td class="alinharRotulos">Número de Contato:</td>
-            <td class="alinharRotulos"><input id="txtDetProduto" type="number"></td>
-        </tr>
-        <!--Quantidade do produto-->
-        <tr>
-            <td class="alinharRotulos">Qual seu destino?</td>
-            <td class="alinharRotulos">
-                <select>
-                    <option value="0">Escolha aqui:</option>
-                    <option value="1">Copacabana, Brasil</option>
-                    <option value="2">Punta Cana, República Dominicana</option>
-                    <option value="3">Cusco, Peru</option>
-                    <option value="4">Havaí, EUA</option>
-                    <option value="5">Buenos Aires, Argentina</option>
-                    <option value="6">Nova York, EUA</option>
-                    <option value="7">Cairo, Egito</option>
-                    <option value="8">Bota outro</option>
-                    <option value="9">Búzios</option>
-                    <option value="10">Leblon</option>
-                </select>
-            </td>
-        </tr>
-        <!--Procedentes-->
-        <tr>
-            <td class="alinharRotulos">Quantas pessoas vão?:</td>
-            <td class="alinharRotulos"><input id="txtProcProduto" type="number"></td>
-        </tr>
-        <!--Botoes-->
-        <tr>
-            <td class="alinharRotulos" colspan="2" aling="center">
-                <input type="button" value="Concluido" class="alinhaBtns" onclick="validarProduto('txtNomeProduto','txtCodProduto','txtDetProduto','qtidadeProduto','txtProcProduto')">
-                <input type="reset" value="Limpar" class="alinhaBtns">
-            </td>
-        </tr>
-    </table>
-</form>
+    <form>
+        <table>
+            <caption>Cadastro de novos equipamentos</caption>
+            <!--Nome do produto-->
+            <tr>
+                <td class="alinharRotulos">Nome completo:</td>
+                <td><input id="txtNomeProduto" type="text"></td>
+            </tr>
+            <!--Código do produto-->
+            <tr>
+                <td class="alinharRotulos">Email:</td>
+                <td><input id="txtCodProduto" type="email"></td>
+            </tr>
+            <!--Detalhes do produto-->
+            <tr>
+                <td class="alinharRotulos">Número de contato:</td>
+                <td><input id="txtDetProduto" type="number"></td>
+            </tr>
+            <!--Quantidade do produto-->
+            <tr>
+                <td class="alinharRotulos">Qual seu destino?:</td>
+                <td>
+                    <select id="qtidadeProduto">
+                        <option value="0">Escolha aqui:</option>
+                        <option value="1">Copacabana, Brasil</option>
+                        <option value="2">Tóquio, Japão</option>
+                        <option value="3">Cusco, Peru</option>
+                        <option value="4">Havaí, EUA</option>
+                        <option value="5">Buenos Aires, Argentina</option>
+                        <option value="6">Nova York, EUA</option>
+                        <option value="7">Cairo, Egito</option>
+                        <option value="8">Troque</option>
+                        <option value="9">Búzios</option>
+                        <option value="10">Leblon</option>
+                    </select>
+                </td>
+            </tr>
+            <!--Procedentes-->
+            <tr>
+                <td class="alinharRotulos">Quantas pessoas vão?:</td>
+                <td><input id="txtProcProduto" type="number"></td>
+            </tr>
+            <!--Botoes-->
+            <tr>
+                <td colspan="2" aling="center">
+                    <input type="button" value="Cadastrar" class="alinhaBtns" onclick="validarProduto('txtNomeProduto','txtCodProduto','txtDetProduto','qtidadeProduto','txtProcProduto')">
+                    <input type="reset" value="Limpar" class="alinhaBtns">
+                </td>
+            </tr>
+        </table>
+    </form>
+
 </body>
 </html>
 <footer class="rodape">
