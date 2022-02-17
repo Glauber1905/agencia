@@ -5,6 +5,11 @@
     margin-bottom: 5rem;
 }
 
+.destino:hover {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+}
+
 @media screen and (min-width: 0) {
     .destino {
         margin-right: 1rem;
