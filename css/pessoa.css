@@ -1,6 +1,7 @@
 .pessoa {
     display: flex;
     flex-direction: column;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 @media screen and (min-width: 0) {

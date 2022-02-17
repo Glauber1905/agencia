@@ -3,6 +3,7 @@
     color: orange;
     text-align: center;
     padding: 1.5625rem 5rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 @media screen and (min-width: 0) {

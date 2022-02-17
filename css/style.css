@@ -13,19 +13,19 @@
 }
 
 .menu_link {
+    width:30%;
+    background-color: rgb(222, 222, 222);
+    border:0px;
+    padding:5px;
+    margin: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-decoration: none;
-    font-size: 0.85em;
-    background: gray;
-    border: 0;
-    margin-bottom: 1em;
-    color: black;
-    padding: 0.2em 0.6em;
-
-
 }
 
 .menu_link:hover {
-    background: #CCBBFF;
+    background: rgb(115,188,255);
     box-shadow: inset 2px 2px 2px rgba(0,0,0,0.2);
     text-shadow: none;
 }
