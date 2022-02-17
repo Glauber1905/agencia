@@ -26,13 +26,14 @@
             <ul>
                 <li class="menu_item"><a class="menu_link" href="index.html">INÍCIO</a></li>
                 <li class="menu_item"><a class="menu_link" href="osmais.html">DESTINOS</a></li>
-                <li class="menu_item"><a class="menu_link" href="#">FAÇA SEU CADASTRO</a></li>
+                <li class="menu_item"><a class="menu_link" href="#">FAÇA SEU PEDIDO</a></li>
             </ul>
         </nav>
     </header><br>
+    <div class="container">
     <form>
         <table>
-            <caption>Cadastro de novos equipamentos</caption>
+            <h1 class="titulo">FINALIZE SEU PEDIDO:</h1><br>
             <!--Nome do produto-->
             <tr>
                 <td class="alinharRotulos">Nome completo:</td>
@@ -61,9 +62,11 @@
                         <option value="5">Buenos Aires, Argentina</option>
                         <option value="6">Nova York, EUA</option>
                         <option value="7">Cairo, Egito</option>
-                        <option value="8">Troque</option>
+                        <option value="8">Punta Cana, Caribe</option>
                         <option value="9">Búzios</option>
                         <option value="10">Leblon</option>
+                        <option value="11">Arpoador</option>
+                        <option value="12">Arraial do Cabo</option>
                     </select>
                 </td>
             </tr>
@@ -74,14 +77,14 @@
             </tr>
             <!--Botoes-->
             <tr>
-                <td colspan="2" aling="center">
+                <td>
                     <input type="button" value="Cadastrar" class="alinhaBtns" onclick="validarProduto('txtNomeProduto','txtCodProduto','txtDetProduto','qtidadeProduto','txtProcProduto')">
                     <input type="reset" value="Limpar" class="alinhaBtns">
                 </td>
             </tr>
         </table>
     </form>
-
+    </div>
 </body>
 </html>
 <footer class="rodape">
